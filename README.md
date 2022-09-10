@@ -13,3 +13,5 @@ For this program, the libraries used were important to include in order to use t
 - Finally, it was important create the certificates needed to communicate with the Email server so that we are able to identify ourselves to the server. This same function also sets up the required protocols and cipher settings for a secure connection.
 - At the end of the program, all the credentials, certificates, and messages for the email could be inserted in smtplib.SMTP_SSL() to open, create, and close the connection for a succcesful email delivery.
 
+## Creating an Unsecure Email Connection
+For this program, the important libraries to establish an email connection were used but this time it initiates an unsecure connection with the email server using __.starttls__. The main difference with this method is that it establishes an unsercure connection first and then encrypts the connection since it is required to have some sort of security.
