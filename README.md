@@ -14,4 +14,9 @@ For this program, the libraries used were important to include in order to use t
 - At the end of the program, all the credentials, certificates, and messages for the email could be inserted in smtplib.SMTP_SSL() to open, create, and close the connection for a succcesful email delivery.
 
 ## Creating an Unsecure Email Connection
-For this program, the important libraries to establish an email connection were used but this time it initiates an unsecure connection with the email server using __.starttls__. The main difference with this method is that it establishes an unsercure connection first and then encrypts the connection since it is required to have some sort of security.
+For this program, the important libraries to establish an email connection were used but this time it initiates an unsecure connection with the email server using __.starttls()__. The main difference with this method is that it establishes an unsercure connection first and then encrypts the connection since it is required to have some sort of security with most email servers.
+- First, it is important to note that the information required to establish a connection is different with this methods and must use the port number 587 with starttls. The email server still remains the same and all the credentials are read in using standard input.
+- Using this information, an instance of smtplib.SMTP is created, which encapsulates an SMTP connection. The __.ehlo()__ is the then used to identify ourselves to the server which is also doen after the __.starttls()__ command.
+- The __.starttls()__ command is used to then encrypt the unsecure SMTP connection as an alternative method of sending emails.
+- In this program, a try block is used to handle errors with the program so that the code does not crash if something goes wrong and instead does proper error handling.
+- The creation of the message to be sent is also styled the same way as when creating a secure email connection since most of the difference is mainly on creating and establishing the connection. 
